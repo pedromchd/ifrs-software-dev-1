@@ -15,7 +15,7 @@
   </tr>
 
   <?php
-  $fp = fopen("./meu_arquivo.txt", "r");
+  $fp = fopen("meu_arquivo.txt", "r");
   while (($line = fgets($fp)) !== false) {
     echo "<tr>";
     foreach (explode(";", $line) as $key => $value) {
