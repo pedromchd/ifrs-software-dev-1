@@ -32,7 +32,7 @@ CREATE TABLE `lista` (
   `nome` varchar(255) NOT NULL,
   `preco` decimal(10,2) NOT NULL,
   `quantidade` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tabelas despejadas

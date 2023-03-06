@@ -13,14 +13,15 @@
         <button type="submit">Enviar</button>
     </form>
     <a href="read.php"><button>Mostar lista</button></a>
+    
+    <?php
+    if (isset($_GET['code'])) {
+        if ($_GET['code']) {
+            echo 'Dados inseridos com sucesso!';
+        } else {
+            echo 'Erro ao inserir dados!';
+        }
+    }
+    ?>
 </body>
 </html>
-
-<?php
-if (isset($_GET['code'])) {
-    if ($_GET['code']) {
-        echo 'Dados inseridos com sucesso!';
-    } else {
-        echo 'Erro ao inserir dados!';
-    }
-}
