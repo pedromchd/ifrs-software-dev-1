@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 06-Mar-2023 às 10:54
--- Versão do servidor: 8.0.32-0ubuntu0.22.04.2
--- versão do PHP: 7.3.33-8+ubuntu22.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: Mar 07, 2023 at 06:36 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,41 +18,41 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `loja`
+-- Database: `loja`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `lista`
+-- Table structure for table `lista`
 --
 
 CREATE TABLE `lista` (
-  `id` int NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `preco` decimal(10,2) NOT NULL,
-  `quantidade` int NOT NULL
+  `id` int(4) NOT NULL,
+  `nome` varchar(32) NOT NULL,
+  `preco` decimal(4,2) NOT NULL,
+  `quantidade` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `lista`
+-- Indexes for table `lista`
 --
 ALTER TABLE `lista`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `lista`
+-- AUTO_INCREMENT for table `lista`
 --
 ALTER TABLE `lista`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
