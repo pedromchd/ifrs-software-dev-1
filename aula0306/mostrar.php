@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    table,
-    th,
-    td {
-      border: 1px solid #000;
-    }
-  </style>
-</head>
+<style>
+  table,
+  th,
+  td {
+    border: 1px solid #000;
+  }
+</style>
 
 <body>
   <table>
@@ -22,13 +17,24 @@
       <th>Preço</th>
       <th>Quantidade</th>
     </tr>
+
     <?php
+    $comecapor = '%';
+    $primeiros = 1000;
+    if (isset($_GET['comecapor']) && $_GET['comecapor']) {
+      $comecapor = $_GET['comecapor'] . '%';
+    }
+    if (isset($_GET['primeiros'])) {
+      $primeiros = $_GET['primeiros'];
+    }
+
     $mysqli = new mysqli('localhost', 'root', '', 'loja');
-    $stmt = $mysqli->prepare('SELECT * FROM lista');
+    $stmt = $mysqli->prepare('SELECT * FROM lista WHERE nome LIKE ? LIMIT ?');
+    $stmt->bind_param('si', $comecapor, $primeiros);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    while ($row = $result->fetch_assoc()) {
       echo '<tr>';
       foreach ($row as $key => $value) {
         echo '<td>' . $value . '</td>';
@@ -37,6 +43,13 @@
     }
     ?>
   </table>
+
+  <form action="mostrar.php" method="get">
+    <label>Começa por: <input type="text" name="comecapor"></label>
+    <label>Primeiros: <input type="number" name="primeiros"></label>
+    <button type="submit">Enviar</button>
+  </form>
+  <a href="/"><button>Voltar</button></a>
 </body>
 
 </html>
