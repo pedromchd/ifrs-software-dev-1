@@ -24,7 +24,7 @@
     if (isset($_GET['comecapor']) && $_GET['comecapor']) {
       $comecapor = $_GET['comecapor'] . '%';
     }
-    if (isset($_GET['primeiros'])) {
+    if (isset($_GET['primeiros']) && $_GET['primeiros']) {
       $primeiros = $_GET['primeiros'];
     }
 
