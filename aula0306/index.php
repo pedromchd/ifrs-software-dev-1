@@ -17,6 +17,7 @@
     } else {
       echo 'Erro ao inserir dados!';
     }
+    unset($_GET['code']);
   }
   ?>
 </body>

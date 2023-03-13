@@ -22,7 +22,7 @@
     $comecapor = '%';
     $primeiros = 1000;
     if (isset($_GET['comecapor']) && $_GET['comecapor']) {
-      $comecapor = $_GET['comecapor'] . '%';
+      $comecapor = "$_GET[comecapor]%";
     }
     if (isset($_GET['primeiros']) && $_GET['primeiros']) {
       $primeiros = $_GET['primeiros'];
@@ -37,7 +37,7 @@
     while ($row = $result->fetch_assoc()) {
       echo '<tr>';
       foreach ($row as $key => $value) {
-        echo '<td>' . $value . '</td>';
+        echo "<td>$value</td>";
       }
       echo '</tr>';
     }

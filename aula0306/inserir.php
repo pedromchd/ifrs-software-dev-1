@@ -11,5 +11,5 @@ if (isset($_POST)) {
 
   $code = $stmt ? 1 : 0;
 
-  header('Location: index.php?code=' . $code);
+  header("Location: index.php?code=$code");
 }
