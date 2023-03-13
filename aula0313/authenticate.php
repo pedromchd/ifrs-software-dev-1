@@ -17,6 +17,7 @@ if ($result = $stmt->get_result()) {
       header('Location: home.php');
       exit;
     }
+    session_unset();
   }
   header('Location: login.php?msg=LOGIN_ERROR');
   exit;
