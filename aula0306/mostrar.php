@@ -12,7 +12,7 @@
 <body>
   <table>
     <tr>
-      <th>Nº</th>
+      <th>#</th>
       <th>Nome</th>
       <th>Preço</th>
       <th>Quantidade</th>
