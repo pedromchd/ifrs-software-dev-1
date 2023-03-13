@@ -10,11 +10,10 @@
 
 <body>
   <?php
+  session_cache_expire(30);
   session_start();
-
   echo "<h1>Hello $_SESSION[fullname]!</h1>"
   ?>
-
   <a href="logout.php"><button>Logout</button></a>
 </body>
 
