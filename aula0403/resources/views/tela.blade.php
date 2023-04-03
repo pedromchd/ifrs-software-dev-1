@@ -9,8 +9,7 @@
 </head>
 
 <body>
-  <h1>Hello World!</h1>
-  <a href="/tela">Tela 1</a>
+  <h1>Outra tela.</h1>
 </body>
 
 </html>
