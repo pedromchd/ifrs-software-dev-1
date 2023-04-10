@@ -14,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', );
+Route::get('/', [MyController::class, 'geraWelcome']);
+
+Route::post('/home', [MyController::class, 'geraMyHome']);
