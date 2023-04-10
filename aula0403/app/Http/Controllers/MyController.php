@@ -10,8 +10,15 @@ class MyController extends Controller
   {
     return view('welcome');
   }
+
   public function geraTela()
   {
     return view('tela');
+  }
+
+  public function geraMyHome(Request $request)
+  {
+    $data = $request->all();
+    return view('myHomeView', ['mydata' => $data['email'], 'mypass' => ['password']]);
   }
 }
