@@ -2,27 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Games;
+use App\Models\Produtos;
 use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
-  public function geraWelcome() {
-    return view('welcome');
+  public function geraMenuPrincipal() {
+    return view('menu_principal');
   }
 
-  public function geraHome(Request $request) {
+  public function geraFormulario() {
+    return view('formulario');
+  }
+
+  public function insereProduto(Request $request) {
     $data = $request->all();
-    $games = $this->getGames();
-    return view('home', [
-      'uname' => $data['username'],
-      'email' => $data['email'],
-      'myGames' => $games
-    ]);
+    $produto = new Produtos;
+    $produto->nome = $data['nome'];
+    $produto->quantidade = $data['quantidade'];
+    $produto->preco = $data['preco'];
+    $produto->save();
+    return redirect('/');
   }
 
-  public function getGames() {
-    $games = Games::all();
-    return $games;
+  public function getProdutos() {
+    $produtos = Produtos::all();
+    return $produtos;
+  }
+
+  public function geraApresentacaoDados() {
+    $produtos = $this->getProdutos();
+    return view('apresentacao_dados', ['produtos' => $produtos]);
   }
 }

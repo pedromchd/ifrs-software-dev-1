@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Games extends Model
+class Produtos extends Model
 {
   use HasFactory;
 
-  protected $fillable = ['name', 'year', 'system', 'developer'];
+  protected $fillable = ['nome', 'quantidade', 'preco'];
 
-  protected $table = 'game';
+  protected $table = 'produto';
 
   public $timestamps = false;
 }

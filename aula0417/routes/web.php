@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MyController::class, 'geraWelcome']);
+Route::get('/', [MyController::class, 'geraMenuPrincipal']);
 
-Route::post('/home', [MyController::class, 'geraHome']);
+Route::get('/insert', [MyController::class, 'geraFormulario']);
+
+Route::post('/insert_data', [MyController::class, 'insereProduto']);
+
+Route::get('/view', [MyController::class, 'geraApresentacaoDados']);
