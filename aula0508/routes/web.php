@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MyController::class, 'geraHome']);
+
+Route::get('/novo', [MyController::class, 'geraNovo']);
+
+Route::post('/insert', [MyController::class, 'insereBolo']);
+
+Route::get('/delete/{id}', [MyController::class, 'byeBolo']);
