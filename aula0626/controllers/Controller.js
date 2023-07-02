@@ -1,7 +1,7 @@
 exports.home = (req, res) => {
-  res.render('home');
+  res.render('content/home');
 };
 
 exports.about = (req, res) => {
-  res.render('about');
+  res.render('content/about');
 };
