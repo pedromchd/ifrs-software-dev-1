@@ -1,7 +1,7 @@
 exports.home = (req, res) => {
-  res.send('Página inicial');
+  res.render('home');
 };
 
 exports.about = (req, res) => {
-  res.send('Sobre nós');
+  res.render('about');
 };
