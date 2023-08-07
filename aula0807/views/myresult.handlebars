@@ -12,7 +12,9 @@
         <tr>
             <td>{{ id }}</td>
             <td>{{ title }}</td>
-            <td>{{ description }}</td>
+            <td>{{ description }}
+                <a href="/delete/{{ id }}">Delete</a>
+            </td>
         </tr>
         {{/each}}
 
