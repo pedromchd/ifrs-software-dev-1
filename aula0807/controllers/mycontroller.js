@@ -3,7 +3,7 @@ const { sequelize, Sequelize } = require('../config/database');
 const livrosModel = require('../models/livros')(sequelize, Sequelize);
 
 exports.showForm = (req, res) => {
-    res.render("myform", { layout: false });
+    res.render('myform', { layout: false });
 }
 
 exports.save = (req, res) => {
@@ -15,7 +15,7 @@ exports.save = (req, res) => {
         console.log('Data saved');
         res.redirect('/')
     }).catch(err => {
-        console.log("Error" + err)
+        console.log('Error' + err)
     });
 }
 
@@ -24,9 +24,13 @@ exports.showResult = (req, res) => {
         order: [['title', 'ASC']]
     }).then(results => {
         //console.log('results'+results.json)
-        res.render("myresult", { resultado: results });
+        res.render('myresult', { resultado: results });
     }).catch(err => {
-        console.log("Error" + err)
-        res.status(500).send({ message: "Error" + err.message })
+        console.log('Error' + err)
+        res.status(500).send({ message: 'Error' + err.message })
     });
+}
+
+exports.delete = (req, res) => {
+    console.log(`Elemento ${ req.params.id }`);
 }

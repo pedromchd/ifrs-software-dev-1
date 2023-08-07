@@ -7,20 +7,20 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const appRoutes = require("./routes/approutes");
+const appRoutes = require('./routes/approutes');
 
 // handlebars configuration
-const handlebars = require("express-handlebars");
-const handlebars_mod = require("handlebars");
+const handlebars = require('express-handlebars');
+const handlebars_mod = require('handlebars');
 
-const { allowInsecurePrototypeAccess } = require("@handlebars/allow-prototype-access");
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 app.engine('handlebars', handlebars.engine({
 	defaultLayout: false,
 	handlebars: allowInsecurePrototypeAccess(handlebars_mod)
 }));
 
-app.set('views', path.join("./views"));
+app.set('views', path.join('./views'));
 app.set('view engine', 'handlebars');
 
 app.use('/users', (req, res, next) => {
