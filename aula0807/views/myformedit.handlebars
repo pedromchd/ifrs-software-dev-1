@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>My form</title>
+    <title>Edit form</title>
 </head>
 
 <body>
-    <h1>My form</h1>
-    <form class="form" action="/" method="post">
+    <h1>Edit form</h1>
+    <form class="form" action="/edit/{{ id }}" method="post">
         <div class="form-group">
             <label for="exampleInputEmail1">Title:</label>
-            <input type="text" class="form-control" id="inputTitle" name="title" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="inputTitle" name="title" value="{{ resultado.title }}" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Description:</label>
-            <input type="text" class="form-control" id="inputDescription" name="description">
+            <input type="text" class="form-control" id="inputDescription" name="description" value="{{ resultado.description }}">
         </div>
         <button name="submit" type="submit" class="btn btn-primary">Submit</button>
     </form>

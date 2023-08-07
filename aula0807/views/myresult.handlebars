@@ -6,20 +6,16 @@
             <th scope="col">Description</th>
         </tr>
     </thead>
-
     <tbody>
         {{#each resultado }}
         <tr>
             <td>{{ id }}</td>
             <td>{{ title }}</td>
             <td>{{ description }}
+                <a href="/edit/{{ id }}">Edit</a>
                 <a href="/delete/{{ id }}">Delete</a>
             </td>
         </tr>
         {{/each}}
-
-
-
     </tbody>
-
 </table>
